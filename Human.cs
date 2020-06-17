@@ -6,8 +6,8 @@ namespace ConsoleAppLearning
 {
     class Human
     {
-        public string Name { get; }
-        public string Surname { get; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public int Age { get; set; }
         public string EyeColor { get; set; }
         public Human(string name, string surname, int age, string eyecolor)
@@ -33,5 +33,11 @@ namespace ConsoleAppLearning
             Name = n;
             Surname = s;
         }
+
+        public void SayName()
+        {
+            Console.WriteLine(this.Name);
+        }
+
     }
 }
