@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleAppLearning
 {
@@ -6,15 +7,24 @@ namespace ConsoleAppLearning
     {
         static void Main(string[] args)
         {
-            Human person;
-            person = new Human( "Marina", "Rediko", 18 , "Blue");
-            person.Introduce();
+            List<Human> persons = new List<Human>();
+            persons.Add(new Human( "Marina", "Rediko", 18, "Blue"));
+            persons.Add(new Human("Alicija", "Voronecka", 42, "Blue"));
+            persons.Add(new Human("Kristina", "Rediko", 15, "Blue"));
+            persons.Add(new Human("Yevgenijs", "Rediko", 43, "Blue"));
 
-            person.AddNumbers(person.Age , 34);
+            /*  for (int i = 0; i < persons.Count; i++)
+              {
+                  persons[i].Introduce();
+              }*/
 
-            Human person1 = new Human("Marina", "Rediko");
-            Console.WriteLine("Hello, {0}", person1.Name);
-            
+            //persons[2].SetAge(8);
+            //Console.WriteLine(persons[0].GetType());
+
+            foreach(var person in persons )
+            {
+                person.Introduce();
+            }
         }
     }
 }
